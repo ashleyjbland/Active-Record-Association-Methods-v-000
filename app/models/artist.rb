@@ -11,6 +11,6 @@ class Artist < ActiveRecord::Base
   end
 
   def genre_count
-    Song.all.genre_id.uniq.count.where("artist = ?", self)
+    self.songs.genre.uniq.count
   end
 end
